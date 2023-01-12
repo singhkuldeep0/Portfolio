@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   console.log(page)
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center overflow-x-hidden">
+    <div className="flex min-h-screen app flex-col items-center justify-center overflow-x-hidden">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
      <main>
       <div className='inline md:hidden'>
-    {page && <Example/>}
+
       </div>
       <Homee page={page} setPage={setPage}/>
      </main>

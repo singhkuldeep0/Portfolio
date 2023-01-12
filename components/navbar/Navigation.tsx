@@ -13,7 +13,7 @@ const variants = {
 
 export const Navigation = () => {
  
-  const itemIds = ["Home" , "About" , "Projects" ,"Contact"];
+  const itemIds = ["Home" , "Skills" , "Projects" , "Testimonials" ,"Contact"];
 
  return <motion.ul className="navul" variants={variants}>
     {itemIds.map((item,i) => (

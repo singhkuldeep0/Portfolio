@@ -1,17 +1,48 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { motion } from 'framer-motion'
 import { slashMotion , textMotion ,limotion } from './animate'
+import { NextPage } from 'next'
+import useMediaQuery from '../../hooks/useMediaQuery'
+import { Example } from '../navbar/Example'
+import AnchorLink from "react-anchor-link-smooth-scroll-v2"
+import DotGroup from '../DotGroup'
+import Landing from '../Landing'
 
-const Homenav = () => {
-    
-    const transitionValues = {
-        duration: 0.8,
-        yoyo: Infinity,
-        ease: "easeOut"
-      };
+interface Props {
+    selectPage:string,
+    setSelectedPage:Dispatch<SetStateAction<string>>,
+    isTopOfPage:boolean
+}
+
+interface LinkProps {
+    page:string,
+    selectedPage:string,
+    setSelectedPage:Dispatch<SetStateAction<string>>
+}
+
+const Link:NextPage<LinkProps> = ({page, selectedPage , setSelectedPage}) => {
+    const lowerCasePage = page.toLocaleLowerCase()
+    return (
+        <motion.li initial="rest" whileHover="hover" animate="rest" variants={limotion}>
+            <AnchorLink
+            className={`${selectedPage === lowerCasePage ? 'text-yellow' : 'hover:text-yellow transition duration-500'} `}
+            href={`#${lowerCasePage}`}
+            onClick={()=>setSelectedPage(lowerCasePage)}
+        >
+            {page}
+        </AnchorLink>
+    </motion.li> 
+    )
+}
+
+const Homenav:NextPage<Props> = ({ isTopOfPage , selectPage , setSelectedPage}) => {
+
+    const isAboveSmallScreens = useMediaQuery("(min-width:768px)")
+    const navbarBackground = isTopOfPage ? '' : 'bg-red'
 
   return (
-    <header className="flex justify-between items-center w-full h-16 px-4 md:px-10  ">
+    <>
+   { isAboveSmallScreens ?<> <header className="flex bg-deep-blue justify-between items-center w-full h-16 px-4 md:px-10  ">
         <motion.div initial="rest" whileHover="hover" animate="rest"
         className='flex h-full gap-1 items-center overflow-hidden w-[174px] cursor-pointer'>
             <div className='flex justify-center items-center' >
@@ -29,13 +60,34 @@ const Homenav = () => {
         </motion.div>
 
         <div className='justify-center hidden md:flex'>
-            <motion.ul className='flex gap-8 lg:gap-12 xl:gap-16' >
-                <motion.li initial="rest" whileHover="hover" animate="rest" variants={limotion} className='liitem'>Work</motion.li>
-                <motion.li initial="rest" whileHover="hover" animate="rest" variants={limotion} className='liitem'>About</motion.li>
-                <motion.li initial="rest" whileHover="hover" animate="rest" variants={limotion} className='liitem'>Contact</motion.li>
+            <motion.ul className='flex gap-16' >
+                <Link 
+                    page="Home"
+                    selectedPage={selectPage}
+                    setSelectedPage={setSelectedPage}    
+                />
+                <Link 
+                    page="Skills"
+                    selectedPage={selectPage}
+                    setSelectedPage={setSelectedPage}    
+                />
+                <Link 
+                    page="Testimonials"
+                    selectedPage={selectPage}
+                    setSelectedPage={setSelectedPage}    
+                />
+                <Link 
+                    page="Contact"
+                    selectedPage={selectPage}
+                    setSelectedPage={setSelectedPage}    
+                />
             </motion.ul>
         </div>
     </header>
+    
+    </>
+    : <Example/>}
+    </>
   )
 }
 
