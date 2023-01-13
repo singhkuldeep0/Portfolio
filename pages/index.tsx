@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Example } from '../components/navbar/Example'
 import Homee from '../components/home/Home'
 import { useState } from 'react'
 import Homenav from '../components/Homenav/Homenav'
