@@ -5,6 +5,8 @@ import Homenav from '../Homenav/Homenav'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import DotGroup from '../DotGroup'
 import Landing from '../Landing'
+import LineGradient from '../LineGradient'
+import MySkills from '../MySkills'
 
 interface Props {
     page: boolean,
@@ -28,7 +30,7 @@ const Home: NextPage<Props> = ({ page, setPage }) => {
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY == 0) setIsTopOfPage(true)
-            if (window.scrollY == 0) setIsTopOfPage(false)
+            if (window.scrollY !== 0) setIsTopOfPage(false)
         }
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll)
@@ -88,7 +90,11 @@ const Home: NextPage<Props> = ({ page, setPage }) => {
                 {isAboveMediumScreens && <DotGroup selectPage={selectPage} setSelectedPage={setSelectedPage} />}
                 <Landing setSelectedPage={setSelectedPage} />
             </div>
+                <LineGradient/>
 
+                <div className='w-5/6 mx-auto md:h-full'>
+                    <MySkills/>
+                </div>
         </div>
     )
 }
