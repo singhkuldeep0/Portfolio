@@ -11,14 +11,14 @@ const SocialMediaIcons = () => {
     visible :{
         transition: {
            when: "beforeChildren", 
-           staggerChildren: 0.4,
+           staggerChildren: 0.1,
        },
     }
 }
 
 const listVariant = {
     hidden :{
-        y:60,
+        y:160,
         opacity:1
     },
     visible :{
@@ -35,10 +35,10 @@ const listVariant = {
     animate="visible"
     
     >
-    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{duration:0.5 , delay:1.8}}><SocialIcon  url="https://linkedin.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
-    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{duration:0.5 , delay:1.8}}><SocialIcon  url="https://twitter.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
-    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{duration:0.5 , delay:1.8}}><SocialIcon  url="https://facebook.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
-    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{duration:0.5 , delay:1.8}}><SocialIcon  url="https://instagram.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
+    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}   transition={{type:"tween",duration:2}}><SocialIcon  url="https://linkedin.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
+    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{type:"tween", duration:2}}><SocialIcon  url="https://twitter.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
+    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{type:"tween", duration:2}}><SocialIcon  url="https://facebook.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
+    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{type:"tween", duration:2}}><SocialIcon  url="https://instagram.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
     </motion.div>
   )
 }

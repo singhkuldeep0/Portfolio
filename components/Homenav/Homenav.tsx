@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useState } from 'react'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import AnchorLink from 'react-anchor-link-smooth-scroll-v2'
 import { motion } from 'framer-motion'
-import { slashMotion, textMotion, limotion } from './animate'
+import { slashMotion, textMotion, limotion , liVariant  } from './animate'
 import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 interface Props {
@@ -22,7 +22,10 @@ interface LinkProps {
 const Link: NextPage<LinkProps> = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLocaleLowerCase()
     return (
-        <motion.li initial="rest" whileHover="hover" animate="rest" variants={limotion}>
+        <motion.li variants={limotion}  transition={{
+            type:"tween",
+            duration:2
+        }}>
             <AnchorLink
                 className={`${selectedPage === lowerCasePage ? 'text-yellow' : 'hover:text-yellow transition duration-500'} `}
                 href={`#${lowerCasePage}`}
@@ -58,7 +61,11 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                     </motion.div>
                 </motion.div>
                 {isAboveSmallScreens ? (
-                    <div className='flex justify-center gap-10 font-Sans text-sm font-semibold'>
+                    <motion.div variants={liVariant}    
+                    initial="hidden"
+                    animate="visible"
+               
+                    className='flex justify-center gap-10 font-Sans text-sm font-semibold overflow-hidden'>
                         <Link
                             page="Home"
                             selectedPage={selectPage}
@@ -84,7 +91,7 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                    </div>
+                    </motion.div>
                 ) : (
                     <button onClick={() => setisMenuToggled(!isMenuToggled)} className={`relative inline-flex items-center justify-start px-2 py-1 overflow-hidden font-medium transition-all ${isTopOfPage ? 'bg-pink-600' : 'bg-deep-blue'} rounded group`}>
                         <span className="w-52 h-52 rounded rotate-[-40deg] bg-blue absolute bottom-0 left-0 -translate-x-full ease-in-out duration-1000  transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
@@ -103,7 +110,7 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                             </button>
                             </div>
 
-                            <div className='flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue'>
+                            <motion.div variants={liVariant} initial="hidden" animate="visible"  className='flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue'>
                             <Link
                             page="Home"
                             selectedPage={selectPage}
@@ -129,7 +136,7 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                            </div>
+                            </motion.div>
                         </div>
                     )
                 }

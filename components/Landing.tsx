@@ -60,8 +60,8 @@ const Landing:NextPage<Props> = ({setSelectedPage}) => {
                     </div>
                     </div>
 
-                <p className='mt-8 md:mt-14 mb-7 text-sm text-center md:text-start'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet harum consectetur praesentium dignissimos ipsum doloribus modi laudantium labore perferendis.
+                <p className='mt-8 md:mt-14 mb-7 text-sm text-center md:text-start tracking-wider'>
+                Hello! My name is Kuldeep Singh and I build things for the web. I&apos;m a web developer specializing in building (and occasionally designing) exceptional digital experiences
                 </p>
                 </motion.div>
 

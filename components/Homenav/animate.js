@@ -38,15 +38,24 @@ export const slashMotion = {
   
 
   export const limotion = {
-  rest:{
-    scale:1
+    hidden :{
+      y:160,
+      opacity:1
   },
-  hover:{
-    scale:1.2,
-    transition: {
-      type: "spring",
-      damping:50,
-      stiffness:400,
+  visible :{
+      y:0,      
+      opacity:1,
+
+  }
+  }
+
+export const liVariant = {
+    hidden :{
+    },
+    visible :{
+        transition: {
+           when: "beforeChildren", 
+           staggerChildren: 0.1,
+       },
     }
-  }
-  }
+}

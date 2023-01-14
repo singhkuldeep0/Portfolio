@@ -14,8 +14,8 @@ const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen app flex-col items-center justify-center overflow-x-hidden">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>SinghKuldeep.com</title>
+        <link rel="icon" href="/favicon.jpg" />
       </Head>
 
 
