@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import AnchorLink from 'react-anchor-link-smooth-scroll-v2'
 import { motion } from 'framer-motion'
@@ -17,15 +17,19 @@ interface LinkProps {
     page: string,
     selectedPage: string,
     setSelectedPage: Dispatch<SetStateAction<string>>
+    navli:boolean
 }
 
-const Link: NextPage<LinkProps> = ({ page, selectedPage, setSelectedPage }) => {
+const Link: NextPage<LinkProps> = ({navli, page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLocaleLowerCase()
+
+
     return (
         <motion.li variants={limotion}  transition={{
             type:"tween",
-            duration:2
-        }}>
+            duration: navli ? 2 : 0.5
+        }}
+        >
             <AnchorLink
                 className={`${selectedPage === lowerCasePage ? 'text-yellow' : 'hover:text-yellow transition duration-500'} `}
                 href={`#${lowerCasePage}`}
@@ -41,6 +45,15 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
 
     const [isMenuToggled, setisMenuToggled] = useState(false)
     const isAboveSmallScreens = useMediaQuery("(min-width:768px)")
+
+    const [navli, setNavli] = useState(true)
+
+    useEffect(() => {
+     setTimeout(() => {
+        setNavli(false)
+     }, 4000);
+    }, [])
+    
 
     return (
         <nav className={`z-40 w-full fixed top-0 py-5 ${ isTopOfPage ? 'bg-deep-blue' : 'bg-pink-600'}`}>
@@ -67,26 +80,31 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                
                     className='flex justify-center gap-10 font-Sans text-sm font-semibold overflow-hidden'>
                         <Link
+                            navli={navli}
                             page="Home"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Skills"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Projects"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Testimonials"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Contact"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
@@ -112,26 +130,31 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
 
                             <motion.div variants={liVariant} initial="hidden" animate="visible"  className='flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue'>
                             <Link
+                            navli={navli}
                             page="Home"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Skills"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Projects"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                            navli={navli}
                             page="Testimonials"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
+                           navli={navli}
                             page="Contact"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}

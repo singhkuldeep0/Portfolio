@@ -4,12 +4,11 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
-  name: 'default',
+  name: 'kuldeep',
   title: 'my portfolio',
-
-  projectId: 'v6ljbwo4',
-  dataset: 'production',
-
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  basePath:"/admin",
   plugins: [deskTool(), visionTool()],
 
   schema: {

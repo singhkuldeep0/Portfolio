@@ -11,7 +11,7 @@ const SocialMediaIcons = () => {
     visible :{
         transition: {
            when: "beforeChildren", 
-           staggerChildren: 0.1,
+           staggerChildren: 0.2,
        },
     }
 }
@@ -35,7 +35,7 @@ const listVariant = {
     animate="visible"
     
     >
-    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}   transition={{type:"tween",duration:2}}><SocialIcon  url="https://linkedin.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
+    <motion.div className='overflow-hiden max-h-fit' variants={listVariant}   transition={{type:"tween", duration:2}}><SocialIcon  url="https://linkedin.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
     <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{type:"tween", duration:2}}><SocialIcon  url="https://twitter.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
     <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{type:"tween", duration:2}}><SocialIcon  url="https://facebook.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>
     <motion.div className='overflow-hiden max-h-fit' variants={listVariant}  transition={{type:"tween", duration:2}}><SocialIcon  url="https://instagram.com/jaketrent" bgColor='none' fgColor="white" /></motion.div>

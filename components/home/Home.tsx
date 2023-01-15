@@ -7,6 +7,7 @@ import DotGroup from '../DotGroup'
 import Landing from '../Landing'
 import LineGradient from '../LineGradient'
 import MySkills from '../MySkills'
+import Projects from '../Projects'
 
 interface Props {
     page: boolean,
@@ -42,7 +43,7 @@ const Home: NextPage<Props> = ({ page, setPage }) => {
             y: "0vw",
         },
         visible: {
-            y: page ? "-180vw" : 0,
+            y: page ? "-250vw" : 0,
             transition: {
                 type: 'spring',
                 stiffness: defaultWidth <= 700 ? 400 : 200,
@@ -94,6 +95,10 @@ const Home: NextPage<Props> = ({ page, setPage }) => {
 
                 <div className='w-5/6 mx-auto md:h-full'>
                     <MySkills/>
+                </div>
+                <LineGradient/>
+                <div className='w-5/6 mx-auto'>
+                    <Projects/>
                 </div>
         </div>
     )

@@ -55,7 +55,7 @@ export const liVariant = {
     visible :{
         transition: {
            when: "beforeChildren", 
-           staggerChildren: 0.1,
+           staggerChildren: 0.2,
        },
     }
 }

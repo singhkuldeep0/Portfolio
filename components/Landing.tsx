@@ -33,13 +33,13 @@ const Landing:NextPage<Props> = ({setSelectedPage}) => {
                 <img 
                 alt='profile'
                 src='/assets/profile-image4.png'
-                className='hover:filter hover:saturate-200 mx-auto rounded-t-[400px] transition duration-500 w-full max-w-[240px] sm:max-w-[300px] xl:max-w-[600px]'
+                className='hover:filter hover:saturate-200 mx-auto rounded-t-[400px] transition duration-500 w-full max-w-[220px] sm:max-w-[300px] xl:max-w-[600px]'
                 />
             </div>
             )}
             </div>
 
-            <div className='z-30 w-full md:w-5/12 mt-12 md:mt-[10rem] '>
+            <div className='z-30 w-full md:w-5/12 mt-4 md:mt-[10rem] '>
                 <motion.div
                 className='flex flex-col w-[100%] justify-center'
                 initial="hidden"
@@ -53,20 +53,21 @@ const Landing:NextPage<Props> = ({setSelectedPage}) => {
                 >
                     <div className='text-4xl  md:text-6xl font-Playfair z-10 text-center md:text-start flex justify-center items-center h-7'>
                     <span className='ml-[15px] mt-[10px] '>Kuldeep {""}</span>
-                    <div className='xs:relative xs:text-deep-blue xs:font-semibold z-20 md:w-[15rem] flex justify-start pt-1 w-[10rem] h-full items-center'
+                    <div className='xs:relative  xs:text-deep-blue xs:font-semibold z-20 md:w-[15rem] flex justify-start pt-1 w-[10rem] h-full items-center'
                     >
                     <img src='/assets/brush.png' className='hidden xs:flex absolute right-0 w-60 md:h-[7rem] h-[4rem]'/>
                      <span className='xs:relative ml-[15px] mt-[10px] xs:text-deep-blue xs:font-semibold'>Singh</span>
                     </div>
                     </div>
 
-                <p className='mt-8 md:mt-14 mb-7 text-sm text-center md:text-start tracking-wider'>
-                Hello! My name is Kuldeep Singh and I build things for the web. I&apos;m a web developer specializing in building (and occasionally designing) exceptional digital experiences
+                <p className='mt-8 md:mt-14 mb-3 md:mb-7 text-sm text-center md:text-start tracking-wider'>
+                Hello! My name is Kuldeep Singh and I build things for the web. 
+                <span className='hidden md:flex'>I&apos;m a web developer specializing in building (and occasionally designing) exceptional digital experiences</span>
                 </p>
                 </motion.div>
 
                 <motion.div
-                className='flex mt-5 justify-center md:justify-start'
+                className='flex mt-2 md:mt-5 justify-center md:justify-start'
                 initial="hidden"
                 whileInView="visible"
                 viewport={{once:true , amount:0.5}}
