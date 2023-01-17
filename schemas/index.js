@@ -1,6 +1,6 @@
 import {projects} from './projects'
 import {accessImage} from './accessImage'
-import {User} from './User'
+import {User} from './user'
 import {Technologies} from './technologies'
 
 
