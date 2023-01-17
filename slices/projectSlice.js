@@ -9,6 +9,7 @@ export const projectSlice = createSlice({
   initialState,
   reducers: {
    setProjects:(state , action)=>{
+    console.log("dispatched" , state)
     state.projects = action.payload
    }
   }

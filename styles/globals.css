@@ -20,18 +20,39 @@ font-family: 'Playfair Display', serif;
   }
 }
 
-html , body, #root , .app{
+html,
+body,
+#root,
+.app {
   height: 100%;
-  background-color:#010026;
+  background-color: #010026;
   @apply text-white font-Sans
 }
 
-.profileImg{
-  background: rgb(224,112,202);
-  background: linear-gradient(180deg, rgba(224,112,202,1) 16%, rgba(4,219,242,1) 99%);
+.profileImg {
+  background: rgb(224, 112, 202);
+  background: linear-gradient(180deg, rgba(224, 112, 202, 1) 16%, rgba(4, 219, 242, 1) 99%);
 }
- 
 
-  li {
-    list-style: none;
-  }
+
+li {
+  list-style: none;
+}
+
+.blue-gradient {
+  background: rgb(162, 224, 230);
+  background: linear-gradient(90deg, rgba(162, 224, 230, 1) 0%, rgba(4, 219, 242, 1) 100%);
+}
+
+.gradient-border {
+  background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px) 0% 100%/8px 8px no-repeat,
+    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 10px) calc(100% - 16px) no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 16px) calc(100% - 10px) no-repeat,
+    repeating-linear-gradient(90deg, #DC4492 0%, #2cbce9 100%);
+  border-radius: 8px;
+  padding: 9px;
+  box-sizing: border-box;
+}

@@ -52,7 +52,7 @@ const Landing:NextPage<Props> = ({setSelectedPage}) => {
                 }}
                 >
                     <div className='text-4xl  md:text-6xl font-Playfair z-10 text-center md:text-start flex justify-center items-center h-7'>
-                    <span className='ml-[15px] mt-[10px] '>Kuldeep {""}</span>
+                    <span className='ml-[28px] md:ml-[15px] mt-[10px]'>Kuldeep {""}</span>
                     <div className='xs:relative  xs:text-deep-blue xs:font-semibold z-20 md:w-[15rem] flex justify-start pt-1 w-[10rem] h-full items-center'
                     >
                     <img src='/assets/brush.png' className='hidden xs:flex absolute right-0 w-60 md:h-[7rem] h-[4rem]'/>

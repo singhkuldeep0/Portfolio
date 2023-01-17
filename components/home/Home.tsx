@@ -8,6 +8,8 @@ import Landing from '../Landing'
 import LineGradient from '../LineGradient'
 import MySkills from '../MySkills'
 import Projects from '../Projects'
+import Testimonials from '../Testimonials'
+import Contact from '../Contact'
 
 interface Props {
     page: boolean,
@@ -99,6 +101,14 @@ const Home: NextPage<Props> = ({ page, setPage }) => {
                 <LineGradient/>
                 <div className='w-5/6 mx-auto'>
                     <Projects/>
+                </div>
+                <LineGradient/>
+                <div className='w-5/6 mx-auto'>
+                    <Testimonials/>
+                </div>
+                <LineGradient/>
+                <div className='w-5/6 mx-auto'>
+                    <Contact/>
                 </div>
         </div>
     )
