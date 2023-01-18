@@ -59,7 +59,7 @@ const work = () => {
     <section>
       <nav className={`z-40 w-full fixed top-0 py-5 ${isTopOfPage ? 'bg-deep-blue' : 'bg-pink-600'}`}>
         <div className="flex items-center justify-between mx-auto w-5/6">
-          <motion.div initial="rest" whileHover="hover" animate="rest"
+         <Link href="/"> <motion.div initial="rest" whileHover="hover" animate="rest"
             className='flex h-full gap-1 items-center overflow-hidden w-[174px] cursor-pointer'>
             <div className='flex justify-center items-center' >
               <motion.span className='text-white text-2xl pt-[0.25rem]' variants={slashMotion}>©</motion.span>
@@ -73,7 +73,7 @@ const work = () => {
                 <span>Singh</span>
               </motion.div>
             </motion.div>
-          </motion.div>
+          </motion.div></Link>
 
           <Link
             className='text-white hover:text-yellow transition duration-500'
@@ -86,14 +86,14 @@ const work = () => {
       <div className='w-full mt-6'>
         <div className=" px-2 py-16 sm:px-0">
           <Tab.Group>
-            <Tab.List className="flex space-x-1 w-[600px] mx-auto rounded-xl bg-red p-1">
+            <Tab.List className="flex space-x-1 w-[365px] overflow-hidden sm:w-[600px] mx-auto rounded-xl bg-red p-1">
               {categories.map((category) => (
                 <Tab
                   onClick={() => filterProjects(category)}
                   key={category}
                   className={({ selected }) => {
                     return classNames(
-                      'w-full rounded-lg py-2.5 px-2 text-sm font-medium leading-5',
+                      'w-full rounded-lg py-2 px-1 text-sm font-medium leading-5',
                       'focus:outline-none ',
                       selected
                         ? 'bg-blue shadow text-white'
