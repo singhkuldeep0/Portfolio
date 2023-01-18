@@ -30,6 +30,11 @@ export const projects = defineType({
     }),
 
     defineField({
+      name: "skills",
+      type: "string",
+      title: "Skills",
+    }),
+    defineField({
       name: "description",
       type: "string",
       title: "Description",

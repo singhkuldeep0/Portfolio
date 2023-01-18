@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react'
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { NextPage } from 'next'
 import Homenav from '../Homenav/Homenav'
@@ -7,7 +8,7 @@ import DotGroup from '../DotGroup'
 import Landing from '../Landing'
 import LineGradient from '../LineGradient'
 import MySkills from '../MySkills'
-import Projects from '../Projects'
+const Projects = dynamic(() => import('../Projects'), { ssr: false })
 import Testimonials from '../Testimonials'
 import Contact from '../Contact'
 
@@ -81,7 +82,7 @@ const Home: NextPage<Props> = ({ page, setPage }) => {
                         return <motion.li
                             key={i}
                             variants={listVariant}
-                            className='navli text-5xl md:text-8xl font-workSans hover:!cursor-default overflow-hidden text-red'>{box}</motion.li>
+                            className='navli text-5xl md:text-8xl font-workSans hover:!cursor-default overflow-hidden text-red shadow-2xl'>{box}</motion.li>
                     })}
                 </div>
                 <div>

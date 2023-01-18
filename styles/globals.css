@@ -40,19 +40,6 @@ li {
 }
 
 .blue-gradient {
-  background: rgb(162, 224, 230);
-  background: linear-gradient(90deg, rgba(162, 224, 230, 1) 0%, rgba(4, 219, 242, 1) 100%);
-}
-
-.gradient-border {
-  background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px no-repeat,
-    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px no-repeat,
-    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px) 0% 100%/8px 8px no-repeat,
-    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px) 100% 100%/8px 8px no-repeat,
-    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 10px) calc(100% - 16px) no-repeat,
-    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 16px) calc(100% - 10px) no-repeat,
-    repeating-linear-gradient(90deg, #DC4492 0%, #2cbce9 100%);
-  border-radius: 8px;
-  padding: 9px;
-  box-sizing: border-box;
+  background: rgb(79,238,223);
+background: linear-gradient(90deg, rgba(79,238,223,0.9895287958115183) 0%, rgba(3,89,244,1) 100%);
 }

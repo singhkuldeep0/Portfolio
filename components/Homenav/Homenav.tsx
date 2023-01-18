@@ -5,6 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll-v2'
 import { motion } from 'framer-motion'
 import { slashMotion, textMotion, limotion , liVariant  } from './animate'
 import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 interface Props {
     isTopOfPage: boolean,
@@ -20,12 +21,28 @@ interface LinkProps {
     navli:boolean
 }
 
-const Link: NextPage<LinkProps> = ({navli, page, selectedPage, setSelectedPage }) => {
+const Linkk: NextPage<LinkProps> = ({navli, page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLocaleLowerCase()
 
 
     return (
-        <motion.li variants={limotion}  transition={{
+        <>
+        {lowerCasePage === "projects" ?
+
+            (<motion.li variants={limotion}  transition={{
+                type:"tween",
+                duration: navli ? 2 : 0.5
+            }}
+            >
+                <Link
+                    className='hover:text-yellow transition duration-500'
+                    href="/work"
+                >
+                    {page}
+                </Link>
+            </motion.li>)  :
+
+              (<motion.li variants={limotion}  transition={{
             type:"tween",
             duration: navli ? 2 : 0.5
         }}
@@ -37,7 +54,12 @@ const Link: NextPage<LinkProps> = ({navli, page, selectedPage, setSelectedPage }
             >
                 {page}
             </AnchorLink>
-        </motion.li>
+        </motion.li> )
+
+        
+        
+        }
+        </>
     )
 }
 
@@ -77,33 +99,34 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                     <motion.div variants={liVariant}    
                     initial="hidden"
                     animate="visible"
-               
                     className='flex justify-center gap-10 font-Sans text-sm font-semibold overflow-hidden'>
-                        <Link
+                        <Linkk
                             navli={navli}
                             page="Home"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        <Linkk
                             navli={navli}
                             page="Skills"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        
+                        <Linkk
                             navli={navli}
                             page="Projects"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        
+                        <Linkk
                             navli={navli}
                             page="Testimonials"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        <Linkk
                             navli={navli}
                             page="Contact"
                             selectedPage={selectPage}
@@ -129,31 +152,31 @@ const Homenav: NextPage<Props> = ({ isTopOfPage, selectPage, setSelectedPage }) 
                             </div>
 
                             <motion.div variants={liVariant} initial="hidden" animate="visible"  className='flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue'>
-                            <Link
+                            <Linkk
                             navli={navli}
                             page="Home"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        <Linkk
                             navli={navli}
                             page="Skills"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        <Linkk
                             navli={navli}
                             page="Projects"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        <Linkk
                             navli={navli}
                             page="Testimonials"
                             selectedPage={selectPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
+                        <Linkk
                            navli={navli}
                             page="Contact"
                             selectedPage={selectPage}
